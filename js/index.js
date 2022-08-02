@@ -138,33 +138,34 @@ function renderPrice() {
   const ul = document.querySelector('.price ul');
   const strong = document.querySelector('.price strong');
   ul.innerHTML = '';
+  let count =10;
 
   if (state.pepperoni) {
     ul.innerHTML += '<li>$1 pepperoni</li>';
-    basePrice+=1;
+    count +=1;
   }
 
   if (state.mushrooms) {
     ul.innerHTML += '<li>$1 mushrooms</li>';
-    basePrice+=1;
+    count +=1;
   }
 
   if (state.greenPeppers) {
     ul.innerHTML += '<li>$1 green peppers</li>';
-    basePrice+=1;
+    count +=1;
   }
 
   if (state.whiteSauce) {
     ul.innerHTML += '<li>$3 white sauce</li>';
-    basePrice+=3;
+    count +=3;
   }
 
   if (state.glutenFreeCrust) {
     ul.innerHTML += '<li>$5 gluten-free crust</li>';
-    basePrice+=5;
+    count +=5;
   }
 
-  strong.innerHTML = `<strong>$${basePrice}</strong>`;
+  strong.innerHTML = `<strong>$${count}</strong>`;
 }
 
 renderEverything();
